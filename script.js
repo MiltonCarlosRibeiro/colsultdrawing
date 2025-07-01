@@ -3,15 +3,18 @@ let dxfFiles = [];
 let historyPDF = [];
 let historyDXF = [];
 
+// Carrega os arquivos do servidor
 fetch('/api/lista')
     .then(res => res.json())
     .then(files => {
         pdfFiles = files.pdfs;
         dxfFiles = files.dxfs;
-        renderCards(pdfFiles, 'cardsContainerPDF', 'pdf');
-        renderCards(dxfFiles, 'cardsContainerDXF', 'dxf');
+        // Não renderiza os cards completos na inicialização!
+        renderHistory('pdf');
+        renderHistory('dxf');
     });
 
+// Renderiza cards dos resultados da busca
 function renderCards(fileList, containerId, type) {
     const cardsContainer = document.getElementById(containerId);
     cardsContainer.innerHTML = '';
@@ -19,21 +22,15 @@ function renderCards(fileList, containerId, type) {
         const card = document.createElement('div');
         card.className = 'card';
         card.textContent = file;
-        if (type === 'pdf') {
-            card.onclick = () => {
-                window.open('/pdfs/' + encodeURIComponent(file), '_blank');
-                addToHistory(file, 'pdf');
-            };
-        } else {
-            card.onclick = () => {
-                window.open('/pdfs/' + encodeURIComponent(file), '_blank');
-                addToHistory(file, 'dxf');
-            };
-        }
+        card.onclick = () => {
+            window.open('/pdfs/' + encodeURIComponent(file), '_blank');
+            addToHistory(file, type);
+        };
         cardsContainer.appendChild(card);
     });
 }
 
+// Adiciona ao histórico
 function addToHistory(file, type) {
     if (type === 'pdf') {
         historyPDF = historyPDF.filter(item => item !== file);
@@ -48,6 +45,7 @@ function addToHistory(file, type) {
     }
 }
 
+// Renderiza cards do histórico
 function renderHistory(type) {
     const containerId = type === 'pdf' ? 'historyContainerPDF' : 'historyContainerDXF';
     const history = type === 'pdf' ? historyPDF : historyDXF;
@@ -62,14 +60,24 @@ function renderHistory(type) {
     });
 }
 
-// Busca por início (começa com)
+// Busca por início
 document.getElementById('searchInputPDF').addEventListener('input', function () {
     const q = this.value.trim().toLowerCase();
+    const containerId = 'cardsContainerPDF';
+    if (q.length === 0) {
+        document.getElementById(containerId).innerHTML = '';
+        return;
+    }
     const filtered = pdfFiles.filter(name => name.toLowerCase().startsWith(q));
-    renderCards(filtered, 'cardsContainerPDF', 'pdf');
+    renderCards(filtered, containerId, 'pdf');
 });
 document.getElementById('searchInputDXF').addEventListener('input', function () {
     const q = this.value.trim().toLowerCase();
+    const containerId = 'cardsContainerDXF';
+    if (q.length === 0) {
+        document.getElementById(containerId).innerHTML = '';
+        return;
+    }
     const filtered = dxfFiles.filter(name => name.toLowerCase().startsWith(q));
-    renderCards(filtered, 'cardsContainerDXF', 'dxf');
+    renderCards(filtered, containerId, 'dxf');
 });
