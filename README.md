@@ -19,7 +19,7 @@ Ideal para equipes que precisam de agilidade para localizar revisões, compartil
 - **Zero instalação no cliente:** basta acessar pelo navegador (Chrome, Edge, etc).
 - **Integração com seu software CAD:** arquivos DXF abrem automaticamente no aplicativo padrão (ex: eDrawings).
 
-## 🖼️ c  COMO FUNCIONA??
+## 🖼️ COMO FUNCIONA??
 
 Pesquise pelo início do código (ex: 12345 R0) para listar todos os desenhos relacionados, independente da revisão.
 Sim! Ele aceita espaço o código para separar a revisão.
@@ -28,7 +28,7 @@ Abra PDFs direto no navegador.
 Clique em DXF para abrir no aplicativo de sua preferência.
 O histórico sempre mostra os últimos 5 arquivos acessados de cada tipo, facilitando o acesso rápido aos projetos mais usados.
 
-## 🖼️ c  COMO FUNCIONA??
+## 🖼️ COMO FUNCIONA??
 Para rodar a aplicação, entre na pasta da aplicação no terminal com o comando:
 
 //Onde você salvou a pasta.
