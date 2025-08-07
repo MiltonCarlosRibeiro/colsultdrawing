@@ -1,0 +1,8 @@
+barra de pesquisar do Windows cole esse caminho abaixo, local de inicialização do windows.
+**************
+
+shell:startup
+
+**************
+
+cole aqui o "start-pm2.bat"

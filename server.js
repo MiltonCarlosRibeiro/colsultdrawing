@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-const MAPOTECA_DIR = 'C:/Users/milton.ribeiro/Desktop/Estudo desenhos das maquinas/Mapoteca';
+const MAPOTECA_DIR = 'T:\Mapoteca';
 
 app.use(express.static(__dirname));
 app.use('/pdfs', express.static(MAPOTECA_DIR));

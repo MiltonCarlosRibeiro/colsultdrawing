@@ -1,0 +1,46 @@
+Acesse:  pasta da sua aplicação:
+cd C:\drawing-mapoteca
+
+
+start node server.js
+
+
+node server.js
+
+
+Solução para rodar o node em backgroud mesmo se o cmd estiver fechado
+
+
+npm install -g pm2
+
+*********************
+Agora rode o servidor com:
+node server.js
+pm2 start server.js
+
+**************************
+
+Para ver o satus
+
+pm2 list
+
+Para parar
+
+ pm2 stop server.js
+
+*********************************
+
+
+Após instalado aparecerá esta msg:
+
+Microsoft Windows [versão 10.0.26100.4351]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\milton.ribeiro>npm install -g pm2
+
+added 135 packages in 4s
+
+13 packages are looking for funding
+  run `npm fund` for details
+
+C:\Users\milton.ribeiro>

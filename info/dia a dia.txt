@@ -1,0 +1,34 @@
+entre na pasta da aplicação
+
+
+*******************************************
+atalho: JANELA DO WINDOS + r digite "cmd"
+*******************************************
+
+na tela preta do prompt cole
+
+*****************************
+
+"cd C:\drawing-mapoteca\info" 
+
+*****************************
++ enter
+
+depois cole os comandos
+
+****************************
+
+start node server.js
+
+****************************
++ enter
+
+depois
+****************************
+
+pm2 start server.js 
+
+****************************
+enter
+
+OK! aplicação rodando!

@@ -1,0 +1,2 @@
+cd /d C:\drawing-mapoteca
+pm2 resurrect
