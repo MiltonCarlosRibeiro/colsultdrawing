@@ -9,9 +9,9 @@ const app = express();
 const PATHS = {
     pdf: 'T:\\Mapoteca',
     dxf: 'T:\\Mapoteca',
-    sldprt: 'C:\\TempSW',
-    sldasm: 'C:\\TempSW',
-    slddrw: 'C:\\TempSW'
+    sldprt: '\\\\PKM-DC1\\Engenharia\\Desenhos SW',
+    sldasm: '\\\\PKM-DC1\\Engenharia\\Desenhos SW',
+    slddrw: '\\\\PKM-DC1\\Engenharia\\Desenhos SW'
 };
 // -------------------------------------------------------------
 
